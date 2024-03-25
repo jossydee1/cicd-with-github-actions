@@ -21,10 +21,10 @@ jobs:
       - name: Install dependencies and build API code
         run: |
           npm install
-          npm run build
+          # npm run build
 
-      # - name: Build and bundle your application
-      #   run: npx react-scripts --openssl-legacy-provider build
+      - name: Build and bundle your application
+        run: npx react-scripts --openssl-legacy-provider build
 
       # - name: Create deployment ZIP file
       #   run: |
