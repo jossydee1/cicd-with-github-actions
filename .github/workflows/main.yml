@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies and build API code
         run: |
           npm install
-          npm build
+          npm run build
 
       # - name: Build and bundle your application
       #   run: npx react-scripts --openssl-legacy-provider build
