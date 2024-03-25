@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync github-cicd.zip s3://github-action1122/github-cicd --delete
+          aws s3 sync ./build s3://github-action1122 --delete
 
       # - name: Invalidate CloudFront cache
       #   run: |
