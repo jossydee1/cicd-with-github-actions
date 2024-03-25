@@ -24,7 +24,7 @@ jobs:
           # npm run build
 
       - name: Build and bundle your application
-        run: npx react-scripts --openssl-legacy-provider build
+        run: npx react-scripts build
 
       # - name: Create deployment ZIP file
       #   run: |
