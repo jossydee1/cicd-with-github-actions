@@ -21,14 +21,9 @@ jobs:
       - name: Install dependencies and build API code
         run: |
           npm install
-          # npm run build
 
       - name: Build and bundle your application
         run: npx react-scripts build
-
-      # - name: Create deployment ZIP file
-      #   run: |
-      #     zip -r function_code.zip . -x "*.git*" -x "*.github*"
 
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
@@ -41,13 +36,7 @@ jobs:
         run: |
           aws s3 sync ./build s3://github-action1122 --delete
 
-      # - name: Invalidate CloudFront cache
-      #   run: |
-      #     aws cloudfront create-invalidation --distribution-id <your CloudFront distribution ID> --paths "/*"
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id EHCNZ3VB1C7RL --paths "/*"
 
-
-
-      # - name: Deploy Lambda Function
-      #   run: |
-      #     aws s3 cp function_code.zip s3://ddpa-api/ddpa
-      #     aws lambda update-function-code --function-name ddpa_api --s3-bucket ddpa-api --s3-key ddpa
